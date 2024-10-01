@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_profile">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <!--Header-->
+        <RelativeLayout
+            android:id="@+id/fillHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="#4CAF50" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="Профиль"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <!--Avatar-->
+
+        <!--fillDate-->
+        <RelativeLayout
+            android:id="@+id/fillAvatar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fillHeader"
+            android:layout_marginTop="3dp">
+
+            <ImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="122dp"
+                android:layout_height="122dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="26dp"
+                android:src="@drawable/avatar_icon" />
+
+            <LinearLayout
+                android:id="@+id/line1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="28dp"
+                android:layout_toEndOf="@id/imgAvatar"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Фамилия: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Самылов"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line1"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="6dp"
+                android:layout_toEndOf="@id/imgAvatar"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Имя: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Дмитрий"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line2"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="6dp"
+                android:layout_toEndOf="@id/imgAvatar"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Отчество: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Александрович"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line3"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="6dp"
+                android:layout_toEndOf="@id/imgAvatar"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="001"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/imgAvatar"
+                android:layout_marginTop="11dp"
+                android:background="#707070" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fillDateContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fillAvatar">
+
+            <TextView
+                android:id="@+id/textDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/fillDate"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="24dp"
+                android:text="Дата рождения"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <View
+                android:id="@+id/fillDate"
+                android:layout_width="380dp"
+                android:layout_height="42dp"
+                android:layout_below="@id/textDate"
+                android:layout_marginTop="8dp"
+                android:layout_centerHorizontal="true"
+                style="@style/styleFill" />
+
+            <FrameLayout
+                android:layout_width="380dp"
+                android:layout_height="42dp"
+                android:layout_below="@id/textDate"
+                android:layout_marginTop="8dp"
+                android:layout_centerHorizontal="true">
+
+                <View
+                    style="@style/styleFill"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="11dp"
+                    android:text="11.05.1990"
+                    android:textSize="14sp"
+                    />
+            </FrameLayout>
+        </RelativeLayout>
+
+        <!--textRefactor-->
+        <TextView
+            android:id="@+id/textRefactor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Изменение данных"
+            android:textSize="26sp"
+
+            android:layout_below="@id/fillDateContainer"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="38dp"/>
+
+        <!--fillPhone-->
+        <RelativeLayout
+            android:id="@+id/fillPhoneContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textRefactor">
+
+            <TextView
+                android:id="@+id/textPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignStart="@id/fillPhone"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="20dp"
+
+                android:text="Телефон"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/fillPhone"
+                style="@style/styleFill"
+                android:layout_width="380dp"
+                android:layout_height="42dp"
+
+                android:layout_below="@id/textPhone"
+                android:layout_marginTop="8dp"
+                android:layout_centerHorizontal="true"
+                />
+
+            <FrameLayout
+                android:layout_width="380dp"
+                android:layout_height="42dp"
+                android:layout_below="@id/textPhone"
+                android:layout_marginTop="8dp"
+                android:layout_centerHorizontal="true">
+
+                <EditText
+                    style="@style/styleFill"
+                    android:paddingStart="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                     />
+            </FrameLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fillPasswordContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fillPhoneContainer">
+
+            <TextView
+                android:id="@+id/textPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignStart="@id/fillPassword"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="20dp"
+
+                android:text="Пароль"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/fillPassword"
+                style="@style/styleFill"
+                android:layout_width="380dp"
+                android:layout_height="42dp"
+
+                android:layout_below="@id/textPassword"
+                android:layout_marginTop="8dp"
+                android:layout_centerHorizontal="true"
+                />
+
+            <FrameLayout
+                android:layout_width="380dp"
+                android:layout_height="42dp"
+                android:layout_below="@id/textPassword"
+                android:layout_marginTop="8dp"
+                android:layout_centerHorizontal="true">
+
+                <EditText
+                    style="@style/styleFill"
+                    android:paddingStart="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+            </FrameLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

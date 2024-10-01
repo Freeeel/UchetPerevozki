@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backgroundImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/background" />
+
+        <TextView
+            android:id="@+id/textSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignTop="@id/backgroundImage"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginTop="45dp"
+            android:text="Авторизация"
+            android:textColor="@color/white"
+
+            android:textSize="32sp" />
+
+    <RelativeLayout
+        android:id="@+id/fillLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/textSignIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="71dp">
+
+        <EditText
+            android:id="@+id/editTextLogin"
+            style="@style/styleEditText"
+
+            android:layout_width="270dp"
+            android:layout_height="match_parent"
+
+            android:textColor="@color/black"
+
+            android:drawableLeft="@drawable/login_icon"
+
+            android:paddingLeft="8dp"
+            android:paddingRight="30dp"
+
+            android:drawablePadding="12dp"
+            android:inputType="textPassword"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:background="@android:color/white"
+            android:layout_toEndOf="@id/editTextLogin"
+            android:layout_marginStart="-226dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fillPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@id/fillLogin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp">
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                style="@style/styleEditText"
+
+                android:layout_width="270dp"
+                android:layout_height="match_parent"
+
+                android:textColor="@color/black"
+
+                android:drawableLeft="@drawable/password_icon"
+
+                android:paddingLeft="8dp"
+                android:paddingRight="30dp"
+
+                android:drawablePadding="12dp"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="45dp"
+                android:layout_centerVertical="true"
+                android:background="@android:color/white"
+                android:layout_toEndOf="@id/editTextPassword"
+                android:layout_marginStart="-226dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fillRememberMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fillPassword"
+            android:layout_centerHorizontal="true">
+
+            <CheckBox
+                android:id="@+id/checkRemember"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                style="@style/CustomCheckBox"
+                android:layout_marginTop="20dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/checkRemember"
+
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:text="Запомнить меня"
+                android:layout_marginTop="19dp"
+                android:layout_marginLeft="5dp"
+                />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+
+            android:layout_below="@id/fillRememberMe"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+
+            android:text="Войти"
+            android:backgroundTint="#4CAF50"
+            android:textSize="18sp"
+            android:onClick="main"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/btnSignIn"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginTop="10dp"
+            android:text="Забыли пароль?"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

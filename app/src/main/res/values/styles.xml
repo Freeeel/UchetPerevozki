@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="styleEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/background_style_edittext</item>
+    </style>
+    <style name="CustomCheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/custom_checkbox_style</item>
+    </style>
+    <style name="styleFill" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:background">@drawable/background_style_fill</item>
+    </style>
+</resources>
