@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".NewReport2">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        >
+
+        <!--Header-->
+        <RelativeLayout
+            android:id="@+id/fillHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="#4CAF50" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="Создание нового отчета"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <!--Numeration-->
+        <ImageView
+            android:id="@+id/fillNumeration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/num2"
+
+            android:layout_below="@+id/fillHeader"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginTop="35dp"/>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/fillNumeration"
+            android:layout_marginTop="33dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@id/fillNumeration"
+                    android:layout_centerHorizontal="true"
+
+
+                    android:text="Сведения о древесине"
+                    android:textSize="24sp"
+                    android:textColor="@color/black"
+                    />
+
+                <!--TypeAndLong-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="40dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_gravity="start">
+
+                            <TextView
+                                android:id="@+id/textType"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Вид"
+                                android:textSize="22sp"
+                                android:textColor="@color/black"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="8dp"
+                                />
+
+                            <RelativeLayout
+                                android:layout_width="170dp"
+                                android:layout_height="130dp"
+                                style="@style/styleFill"
+                                android:layout_below="@+id/textType">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_centerVertical="true"
+                                    >
+
+                                    <RadioGroup
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:paddingStart="10dp"
+                                        >
+
+                                        <RadioButton
+                                            android:id="@+id/radioType1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:button="@drawable/custom_radio_btn"
+
+                                            android:text="Баланс"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="20sp"
+
+                                            android:paddingStart="6dp"/>
+
+                                        <RadioButton
+                                            android:id="@+id/radioType2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:button="@drawable/custom_radio_btn"
+
+                                            android:text="Пиловочник"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="20sp"
+
+                                            android:paddingStart="6dp"
+
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginBottom="8dp"/>
+
+                                        <RadioButton
+                                            android:id="@+id/radioType3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:button="@drawable/custom_radio_btn"
+
+                                            android:text="Фанкряж"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="20sp"
+
+                                            android:paddingStart="6dp"/>
+
+                                    </RadioGroup>
+                                </LinearLayout>
+                            </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="20dp">
+
+                        <TextView
+                            android:id="@+id/textLong"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Длина"
+                            android:textSize="22sp"
+                            android:textColor="@color/black"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="8dp"
+                            />
+
+                        <RelativeLayout
+                            android:layout_width="170dp"
+                            android:layout_height="130dp"
+                            style="@style/styleFill"
+                            android:layout_below="@+id/textLong">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_centerVertical="true"
+                                >
+
+                                <RadioGroup
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:paddingStart="10dp"
+                                    >
+
+                                    <RadioButton
+                                        android:id="@+id/radioLong1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:button="@drawable/custom_radio_btn"
+
+                                        android:text="3 метра"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="20sp"
+
+                                        android:paddingStart="6dp"/>
+
+                                    <RadioButton
+                                        android:id="@+id/radioLong2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:button="@drawable/custom_radio_btn"
+
+                                        android:text="4 метра"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="20sp"
+
+                                        android:paddingStart="6dp"
+
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginBottom="8dp"/>
+
+                                    <RadioButton
+                                        android:id="@+id/radioLong3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:button="@drawable/custom_radio_btn"
+
+                                        android:text="6 метров"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="20sp"
+
+                                        android:paddingStart="6dp"/>
+
+                                </RadioGroup>
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <!--Volume-->
+                <RelativeLayout
+                    android:id="@+id/fillVolumeContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textVolume"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameVolume"
+                        android:layout_marginStart="3dp"
+
+                        android:text="Объём"
+
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameVolume"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textVolume"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <EditText
+                            android:id="@+id/fillVolume"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--Assortment-->
+                <RelativeLayout
+                    android:id="@+id/fillAssortmentContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textAssortment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameAssortment"
+                        android:layout_marginStart="3dp"
+
+                        android:text="Ассортимент"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameAssortment"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textAssortment"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <Spinner
+                            android:id="@+id/fillAssortment"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--VarietyWood-->
+                <RelativeLayout
+                    android:id="@+id/fillVarietyWoodContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textVarietyWood"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameVarietyWood"
+                        android:layout_marginStart="3dp"
+
+                        android:text="Сорт дерева"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameVarietyWood"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textVarietyWood"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <Spinner
+                            android:id="@+id/fillVarietyWood"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="35dp">
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="55dp"
+
+                        android:background="@drawable/btn_back"
+                        app:backgroundTint="@null"
+                        android:text="Назад"
+                        android:textColor="#4CAF50"
+                        android:textSize="16sp"
+
+                        />
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="55dp"
+
+                        android:background="@drawable/background_style_btn"
+                        app:backgroundTint="@null"
+                        android:text="Далее"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="38dp"
+                        android:textSize="16sp"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#4CAF50"
+                    android:layout_marginTop="26dp"
+                    />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

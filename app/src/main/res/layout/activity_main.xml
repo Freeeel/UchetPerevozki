@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".Аuthorization">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -36,50 +36,16 @@
 
             android:textSize="32sp" />
 
-    <RelativeLayout
-        android:id="@+id/fillLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_below="@id/textSignIn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="71dp">
-
-        <EditText
-            android:id="@+id/editTextLogin"
-            style="@style/styleEditText"
-
-            android:layout_width="270dp"
-            android:layout_height="match_parent"
-
-            android:textColor="@color/black"
-
-            android:drawableLeft="@drawable/login_icon"
-
-            android:paddingLeft="8dp"
-            android:paddingRight="30dp"
-
-            android:drawablePadding="12dp"
-            android:inputType="textPassword"/>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="45dp"
-            android:layout_centerVertical="true"
-            android:background="@android:color/white"
-            android:layout_toEndOf="@id/editTextLogin"
-            android:layout_marginStart="-226dp" />
-        </RelativeLayout>
-
         <RelativeLayout
-            android:id="@+id/fillPassword"
+            android:id="@+id/fillLogin"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_below="@id/fillLogin"
+            android:layout_below="@id/textSignIn"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="26dp">
+            android:layout_marginTop="71dp">
 
             <EditText
-                android:id="@+id/editTextPassword"
+                android:id="@+id/editTextLogin"
                 style="@style/styleEditText"
 
                 android:layout_width="270dp"
@@ -87,76 +53,113 @@
 
                 android:textColor="@color/black"
 
-                android:drawableLeft="@drawable/password_icon"
+                android:drawableLeft="@drawable/login_icon"
 
                 android:paddingLeft="8dp"
                 android:paddingRight="30dp"
 
-                android:drawablePadding="12dp"/>
+                android:drawablePadding="12dp"
+                android:inputType="text"/>
 
             <View
                 android:layout_width="1dp"
                 android:layout_height="45dp"
                 android:layout_centerVertical="true"
                 android:background="@android:color/white"
-                android:layout_toEndOf="@id/editTextPassword"
+                android:layout_toEndOf="@id/editTextLogin"
                 android:layout_marginStart="-226dp" />
-        </RelativeLayout>
+            </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/fillRememberMe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fillPassword"
-            android:layout_centerHorizontal="true">
+            <RelativeLayout
+                android:id="@+id/fillPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_below="@id/fillLogin"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="26dp">
 
-            <CheckBox
-                android:id="@+id/checkRemember"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                style="@style/CustomCheckBox"
-                android:layout_marginTop="20dp"
+                <EditText
+                    android:id="@+id/editTextPassword"
+                    style="@style/styleEditText"
+
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent"
+
+                    android:textColor="@color/black"
+
+                    android:drawableLeft="@drawable/password_icon"
+                    android:inputType="textPassword"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="30dp"
+
+                    android:drawablePadding="12dp"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="45dp"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/white"
+                    android:layout_toEndOf="@id/editTextPassword"
+                    android:layout_marginStart="-226dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/fillRememberMe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fillPassword"
+                android:layout_centerHorizontal="true">
+
+                <CheckBox
+                    android:id="@+id/checkRemember"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    style="@style/CustomCheckBox"
+                    android:layout_marginTop="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/checkRemember"
+
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:text="Запомнить меня"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginLeft="5dp"
+                    />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+
+                android:layout_below="@id/fillRememberMe"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+
+                android:background="@drawable/btn_sign_in"
+
+                android:text="Войти"
+                android:backgroundTint="#4CAF50"
+                android:textSize="16sp"
+                android:onClick="main"
+                android:textColor="@color/white"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/checkRemember"
 
+                android:layout_below="@id/btnSignIn"
+                android:layout_centerHorizontal="true"
+
+                android:layout_marginTop="10dp"
+                android:text="Забыли пароль?"
                 android:textSize="15sp"
                 android:textColor="@color/white"
-                android:text="Запомнить меня"
-                android:layout_marginTop="19dp"
-                android:layout_marginLeft="5dp"
                 />
-        </RelativeLayout>
-
-        <Button
-            android:id="@+id/btnSignIn"
-            android:layout_width="150dp"
-            android:layout_height="55dp"
-
-            android:layout_below="@id/fillRememberMe"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"
-
-            android:text="Войти"
-            android:backgroundTint="#4CAF50"
-            android:textSize="18sp"
-            android:onClick="main"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_below="@id/btnSignIn"
-            android:layout_centerHorizontal="true"
-
-            android:layout_marginTop="10dp"
-            android:text="Забыли пароль?"
-            android:textSize="15sp"
-            android:textColor="@color/white"
-            />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

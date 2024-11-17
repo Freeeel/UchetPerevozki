@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Repair"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        >
+
+        <!--Header-->
+        <RelativeLayout
+            android:id="@+id/fillHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="#4CAF50" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="Запись на ремонт"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/fillHeader"
+            android:layout_above="@+id/menuContainer"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <!--fillBrand-->
+                <RelativeLayout
+                    android:id="@+id/fillBrandontainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textBrand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameBrand"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="43dp"
+
+                        android:text="Марка ТС"
+
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+
+                    <FrameLayout
+                        android:id="@+id/frameBrand"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textBrand"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp">
+
+                        <EditText
+                            android:id="@+id/fillBrand"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--fillModel-->
+                <RelativeLayout
+                    android:id="@+id/fillModelContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textModel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameModel"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="15dp"
+
+                        android:text="Модель ТС"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameModel"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textModel"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp">
+
+                        <EditText
+                            android:id="@+id/fillModel"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--fillNumber-->
+                <RelativeLayout
+                    android:id="@+id/fillNumberContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameNumber"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="15dp"
+
+                        android:text="Гос Номер ТС"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textNumber"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp">
+
+                        <EditText
+                            android:id="@+id/fillNumber"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--fillTitle-->
+                <RelativeLayout
+                    android:id="@+id/fillDescriptionContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameDescription"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="15dp"
+
+                        android:text="Описание неисправности"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+
+                    <FrameLayout
+                        android:id="@+id/frameDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_below="@id/textDescription"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp">
+
+                        <EditText
+                            android:id="@+id/fillDescription"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--fillTimeAndDate-->
+                <RelativeLayout
+                    android:id="@+id/fillDateTimeContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textDateTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameDateTime"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="15dp"
+
+                        android:text="Время и дата ремонта"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameDateTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textDateTime"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp">
+
+                        <EditText
+                            android:id="@+id/fillDateTime"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--filladdress-->
+                <RelativeLayout
+                    android:id="@+id/fillAddressContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameAddress"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="15dp"
+
+                        android:text="Место проведения ремонта"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textAddress"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp">
+
+                        <EditText
+                            android:id="@+id/fillAddress"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!--menu-->
+                <RelativeLayout
+                    android:id="@+id/menuContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    >
+
+                    <View
+                        android:layout_width="500dp"
+                        android:layout_height="90dp"
+                        android:background="#D9D9D9" />
+
+                    <Button
+                        android:id="@+id/reportsBtn"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableTop="@drawable/btn_menu_1"
+                        android:text="Все отчёты"
+                        android:textColor="#4F4F4F"
+                        android:textSize="9dp"
+                        android:layout_marginLeft="10dp"
+                        />
+
+                    <Button
+                        android:id="@+id/reportBtn"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/reportsBtn"
+                        android:drawableTop="@drawable/btn_menu_2"
+                        android:text="Отчёт"
+                        android:textColor="#4F4F4F"
+
+                        android:textSize="9dp" />
+
+                    <Button
+                        android:id="@+id/profileBtn"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/reportBtn"
+                        android:drawableTop="@drawable/btn_menu_3"
+                        android:text="Профиль"
+                        android:textColor="#4F4F4F"
+
+                        android:textSize="9dp" />
+
+                    <Button
+                        android:id="@+id/repairBtn"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="wrap_content"
+                        android:layout_height="87dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/profileBtn"
+                        android:drawableTop="@drawable/btn_menu_4"
+                        android:text="Ремонт"
+                        android:textColor="#4F4F4F"
+
+                        android:textSize="9dp"
+
+                        android:paddingTop="12dp"
+                        />
+                </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

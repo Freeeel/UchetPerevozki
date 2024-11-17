@@ -1,0 +1,11 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@android:color/transparent"/> <!-- Прозрачный цвет -->
+            <stroke
+                android:width="3dp"
+                android:color="#4CAF50"/> <!-- Зеленая обводка -->
+            <size android:width="28dp" android:height="28dp"/> <!-- Размер радиобатона -->
+        </shape>
+    </item>
+</layer-list>

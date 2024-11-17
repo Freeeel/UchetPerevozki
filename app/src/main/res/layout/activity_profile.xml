@@ -6,12 +6,13 @@
     android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_profile">
+    tools:context=".Profile">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        >
 
         <!--Header-->
         <RelativeLayout
@@ -38,8 +39,6 @@
         </RelativeLayout>
 
         <!--Avatar-->
-
-        <!--fillDate-->
         <RelativeLayout
             android:id="@+id/fillAvatar"
             android:layout_width="match_parent"
@@ -51,7 +50,7 @@
                 android:id="@+id/imgAvatar"
                 android:layout_width="122dp"
                 android:layout_height="122dp"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="26dp"
                 android:src="@drawable/avatar_icon" />
 
@@ -156,161 +155,298 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/fillDateContainer"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_below="@+id/fillAvatar">
 
-            <TextView
-                android:id="@+id/textDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@id/fillDate"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="24dp"
-                android:text="Дата рождения"
-                android:textColor="@color/black"
-                android:textSize="22sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
-            <View
-                android:id="@+id/fillDate"
-                android:layout_width="380dp"
-                android:layout_height="42dp"
-                android:layout_below="@id/textDate"
-                android:layout_marginTop="8dp"
-                android:layout_centerHorizontal="true"
-                style="@style/styleFill" />
-
-            <FrameLayout
-                android:layout_width="380dp"
-                android:layout_height="42dp"
-                android:layout_below="@id/textDate"
-                android:layout_marginTop="8dp"
-                android:layout_centerHorizontal="true">
-
-                <View
-                    style="@style/styleFill"
+                <!--fillDate-->
+                <RelativeLayout
+                    android:id="@+id/fillDateContainer"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    />
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:id="@+id/textDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@id/frameDate"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Дата рождения"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
 
+                    <FrameLayout
+                        android:id="@+id/frameDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textDate"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp">
+
+                        <View
+                            android:id="@+id/fillDate"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="11dp"
+                            android:text="11.05.1990"
+                            android:textSize="14sp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--textRefactor-->
                 <TextView
+                    android:id="@+id/textRefactor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="11dp"
-                    android:text="11.05.1990"
-                    android:textSize="14sp"
-                    />
-            </FrameLayout>
-        </RelativeLayout>
 
-        <!--textRefactor-->
-        <TextView
-            android:id="@+id/textRefactor"
+                    android:layout_marginTop="20dp"
+                    android:text="Изменение данных"
+                    android:textSize="26sp" />
+
+                <!--fillPhone-->
+                <RelativeLayout
+                    android:id="@+id/fillPhoneContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/framePhone"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="10dp"
+
+                        android:text="Телефон"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/framePhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textPhone"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp">
+
+                        <EditText
+                            android:id="@+id/fillPhone"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp"
+                            android:textColor="@color/black" />
+                    </FrameLayout>
+
+                </RelativeLayout>
+
+                <!--fillPassword-->
+                <RelativeLayout
+                    android:id="@+id/fillPasswordContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/framePassword"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="15dp"
+
+                        android:text="Пароль"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/framePassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textPassword"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp">
+
+                        <EditText
+                            android:id="@+id/fillPassword"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--fillAddress-->
+                <RelativeLayout
+                    android:id="@+id/fillAddressContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameAddress"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="15dp"
+
+                        android:text="Адрес проживания"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textAddress"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp">
+
+                        <EditText
+                            android:id="@+id/fillAddress"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--fillBankNumber-->
+                <RelativeLayout
+                    android:id="@+id/fillBankNumberContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textBankNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameBankNumber"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="15dp"
+
+                        android:text="Номер банковского счета"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameBankNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textBankNumber"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp">
+
+                        <EditText
+                            android:id="@+id/fillBankNumber"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!--menu-->
+        <RelativeLayout
+            android:id="@+id/menuContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:text="Изменение данных"
-            android:textSize="26sp"
-
-            android:layout_below="@id/fillDateContainer"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="38dp"/>
+            >
+            <View
+                android:layout_width="500dp"
+                android:layout_height="90dp"
+                android:background="#D9D9D9" />
 
-        <!--fillPhone-->
-        <RelativeLayout
-            android:id="@+id/fillPhoneContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textRefactor">
-
-            <TextView
-                android:id="@+id/textPhone"
+            <Button
+                android:id="@+id/reportsBtn"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:layout_alignStart="@id/fillPhone"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="20dp"
-
-                android:text="Телефон"
-                android:textColor="@color/black"
-                android:textSize="22sp" />
-
-            <EditText
-                android:id="@+id/fillPhone"
-                style="@style/styleFill"
-                android:layout_width="380dp"
-                android:layout_height="42dp"
-
-                android:layout_below="@id/textPhone"
-                android:layout_marginTop="8dp"
-                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:drawableTop="@drawable/btn_menu_1"
+                android:text="Все отчёты"
+                android:textColor="#4F4F4F"
+                android:textSize="9dp"
+                android:layout_marginLeft="10dp"
                 />
 
-            <FrameLayout
-                android:layout_width="380dp"
-                android:layout_height="42dp"
-                android:layout_below="@id/textPhone"
-                android:layout_marginTop="8dp"
-                android:layout_centerHorizontal="true">
-
-                <EditText
-                    style="@style/styleFill"
-                    android:paddingStart="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                     />
-            </FrameLayout>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/fillPasswordContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/fillPhoneContainer">
-
-            <TextView
-                android:id="@+id/textPassword"
+            <Button
+                android:id="@+id/reportBtn"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/reportsBtn"
+                android:drawableTop="@drawable/btn_menu_2"
+                android:text="Отчёт"
+                android:textColor="#4F4F4F"
 
-                android:layout_alignStart="@id/fillPassword"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="20dp"
+                android:textSize="9dp" />
 
-                android:text="Пароль"
-                android:textColor="@color/black"
-                android:textSize="22sp" />
+            <Button
+                android:id="@+id/profileBtn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/reportBtn"
+                android:drawableTop="@drawable/btn_menu_3"
+                android:text="Профиль"
+                android:textColor="#4F4F4F"
 
-            <EditText
-                android:id="@+id/fillPassword"
-                style="@style/styleFill"
-                android:layout_width="380dp"
-                android:layout_height="42dp"
+                android:textSize="9dp" />
 
-                android:layout_below="@id/textPassword"
-                android:layout_marginTop="8dp"
-                android:layout_centerHorizontal="true"
+            <Button
+                android:id="@+id/repairBtn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="87dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/profileBtn"
+                android:drawableTop="@drawable/btn_menu_4"
+                android:text="Ремонт"
+                android:textColor="#4F4F4F"
+
+                android:textSize="9dp"
+
+                android:paddingTop="12dp"
+
+                android:onClick="repairOpen"
                 />
-
-            <FrameLayout
-                android:layout_width="380dp"
-                android:layout_height="42dp"
-                android:layout_below="@id/textPassword"
-                android:layout_marginTop="8dp"
-                android:layout_centerHorizontal="true">
-
-                <EditText
-                    style="@style/styleFill"
-                    android:paddingStart="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    />
-            </FrameLayout>
         </RelativeLayout>
+
     </RelativeLayout>
 
 

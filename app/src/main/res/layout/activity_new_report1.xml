@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewReport1"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        >
+
+        <!--Header-->
+        <RelativeLayout
+            android:id="@+id/fillHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="#4CAF50" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="Создание нового отчета"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <!--Numeration-->
+        <ImageView
+            android:id="@+id/fillNumeration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/num1"
+
+            android:layout_below="@+id/fillHeader"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginTop="35dp"/>
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/fillNumeration"
+            android:layout_marginTop="33dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@id/fillNumeration"
+                    android:layout_centerHorizontal="true"
+
+
+                    android:text="Сведения о транспортировке"
+                    android:textSize="24sp"
+                    android:textColor="@color/black"
+
+                    />
+
+                <!--DeparturePoint-->
+                <RelativeLayout
+                    android:id="@+id/fillDeparturePointContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textDeparturePoint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameDeparturePoint"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="43dp"
+
+                        android:text="Пункт отправления"
+
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameDeparturePoint"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textDeparturePoint"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <EditText
+                            android:id="@+id/fillDeparturePoint"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--TypeDeparturePoint-->
+                <RelativeLayout
+                    android:id="@+id/fillTypeDeparturePointContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textTypeDeparturePoint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameTypeDeparturePoint"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="15dp"
+
+                        android:text="Тип пункта отправления"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameTypeDeparturePoint"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textTypeDeparturePoint"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <EditText
+                            android:id="@+id/fillTypeDeparturePoint"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--Sender-->
+                <RelativeLayout
+                    android:id="@+id/fillSenderContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textSender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameSender"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="15dp"
+
+                        android:text="Отправитель"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameSender"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textSender"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <EditText
+                            android:id="@+id/fillSender"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp"
+                            />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--TargetPoint-->
+                <RelativeLayout
+                    android:id="@+id/fillTargetPointContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textTargetPoint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameTargetPoint"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="40dp"
+
+                        android:text="Пункт назначения"
+
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameTargetPoint"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textTargetPoint"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <EditText
+                            android:id="@+id/fillTargetPoint"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--TypeTargetPoint-->
+                <RelativeLayout
+                    android:id="@+id/fillTypeTargetPointContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textTypeTargetPoint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameTypeTargetPoint"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="15dp"
+
+                        android:text="Тип пункта назначения"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameTypeTargetPoint"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textTypeTargetPoint"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <EditText
+                            android:id="@+id/fillTypeTargetPoint"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--Recipient-->
+                <RelativeLayout
+                    android:id="@+id/fillRecipientContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textRecipient"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameRecipient"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="15dp"
+
+                        android:text="Получатель"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameRecipient"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textRecipient"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <EditText
+                            android:id="@+id/fillRecipient"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp"
+                            />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="35dp">
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="55dp"
+
+                        android:background="@drawable/btn_back"
+                        app:backgroundTint="@null"
+                        android:text="Назад"
+                        android:textColor="#4CAF50"
+                        android:textSize="16sp"
+
+                        />
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="55dp"
+
+                        android:background="@drawable/background_style_btn"
+                        app:backgroundTint="@null"
+                        android:text="Далее"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="38dp"
+                        android:textSize="16sp"
+                       />
+                </LinearLayout>
+                
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_alignParentBottom="true"
+
+                    android:layout_marginTop="26dp"
+                    android:background="#4CAF50"
+                    />
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

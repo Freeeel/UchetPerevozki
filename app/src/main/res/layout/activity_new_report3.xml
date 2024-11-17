@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".NewReport3">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        >
+
+        <!--Header-->
+        <RelativeLayout
+            android:id="@+id/fillHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="#4CAF50" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="Подтверждение данных"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <!--Numeration-->
+        <ImageView
+            android:id="@+id/fillNumeration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/num3"
+
+            android:layout_below="@+id/fillHeader"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginTop="35dp"/>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/fillNumeration"
+            android:layout_marginTop="33dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@id/fillNumeration"
+                    android:layout_centerHorizontal="true"
+
+
+                    android:text="Общие сведения"
+                    android:textSize="24sp"
+                    android:textColor="@color/black"
+                    />
+
+                <!--DeparturePoint-->
+                <RelativeLayout
+                    android:id="@+id/fillDeparturePointContainerFinal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textDeparturePointFinal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameDeparturePointFinal"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="20dp"
+
+                        android:text="Пункт отправления"
+
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameDeparturePointFinal"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textDeparturePointFinal"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <EditText
+                            android:id="@+id/fillDeparturePointFinal"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+
+
+                <!--Sender-->
+                <RelativeLayout
+                    android:id="@+id/fillSenderContainerFinal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textSenderFinal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameSenderFinal"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="10dp"
+
+                        android:text="Отправитель"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameSenderFinal"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textSenderFinal"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <EditText
+                            android:id="@+id/fillSenderFinal"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp"
+                            />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--TargetPoint-->
+                <RelativeLayout
+                    android:id="@+id/fillTargetPointContainerFinal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textTargetPointFinal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameTargetPointFinal"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="10dp"
+
+                        android:text="Пункт назначения"
+
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameTargetPointFinal"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textTargetPointFinal"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <EditText
+                            android:id="@+id/fillTargetPointFinal"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--Recipient-->
+                <RelativeLayout
+                    android:id="@+id/fillRecipientContainerFinal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textRecipientFinal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameRecipientFinal"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="10dp"
+
+                        android:text="Получатель"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameRecipientFinal"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textRecipientFinal"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <EditText
+                            android:id="@+id/fillRecipientFinal"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp"
+                            />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_gravity="start">
+
+                        <TextView
+                            android:id="@+id/textType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Вид"
+                            android:textSize="22sp"
+                            android:textColor="@color/black"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="8dp"
+                            />
+
+                        <EditText
+                            android:layout_width="170dp"
+                            android:layout_height="42dp"
+                            style="@style/styleFill"
+                            android:layout_below="@+id/textType">
+
+                        </EditText>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="20dp">
+
+                        <TextView
+                            android:id="@+id/textLong"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Длина"
+                            android:textSize="22sp"
+                            android:textColor="@color/black"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="8dp"
+                            />
+
+                        <RelativeLayout
+                            android:layout_width="170dp"
+                            android:layout_height="42dp"
+                            style="@style/styleFill"
+                            android:layout_below="@+id/textLong">
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <!--Volume-->
+                <RelativeLayout
+                    android:id="@+id/fillVolumeContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textVolume"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameVolume"
+                        android:layout_marginStart="3dp"
+
+                        android:text="Объём"
+
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameVolume"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textVolume"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <EditText
+                            android:id="@+id/fillVolume"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--Assortment-->
+                <RelativeLayout
+                    android:id="@+id/fillAssortmentContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textAssortment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameAssortment"
+                        android:layout_marginStart="3dp"
+
+                        android:text="Ассортимент"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameAssortment"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textAssortment"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <Spinner
+                            android:id="@+id/fillAssortment"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--VarietyWood-->
+                <RelativeLayout
+                    android:id="@+id/fillVarietyWoodContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textVarietyWood"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignStart="@id/frameVarietyWood"
+                        android:layout_marginStart="3dp"
+
+                        android:text="Сорт дерева"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <FrameLayout
+                        android:id="@+id/frameVarietyWood"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_below="@id/textVarietyWood"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp">
+
+                        <Spinner
+                            android:id="@+id/fillVarietyWood"
+                            style="@style/styleFill"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="35dp">
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="55dp"
+
+                        android:background="@drawable/btn_back"
+                        app:backgroundTint="@null"
+                        android:text="Назад"
+                        android:textColor="#4CAF50"
+                        android:textSize="16sp"
+
+                        />
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="55dp"
+
+                        android:background="@drawable/background_style_btn"
+                        app:backgroundTint="@null"
+                        android:text="Далее"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="38dp"
+                        android:textSize="16sp"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#4CAF50"
+                    android:layout_marginTop="26dp"
+                    />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

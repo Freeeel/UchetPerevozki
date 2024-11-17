@@ -10,4 +10,14 @@
     <style name="styleFill" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:background">@drawable/background_style_fill</item>
     </style>
+    <style name="styleBtn" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:background">@drawable/background_style_btn</item>
+    </style>
+    <style name="styleBtnBack" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:background">@drawable/btn_back</item>
+    </style>
+    <style name="radioBtn" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/custom_radio_btn</item>
+    </style>
 </resources>
