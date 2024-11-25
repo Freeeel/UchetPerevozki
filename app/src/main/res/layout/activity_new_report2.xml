@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -48,7 +48,9 @@
             android:layout_below="@+id/fillHeader"
             android:layout_centerHorizontal="true"
 
-            android:layout_marginTop="35dp"/>
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
 
 
         <ScrollView
@@ -83,13 +85,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="40dp">
+                    android:layout_marginTop="40dp"
+                    >
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="40dp"
-                        android:layout_gravity="start">
+                        android:layout_gravity="start"
+                        android:layout_marginLeft="10dp">
 
                             <TextView
                                 android:id="@+id/textType"
@@ -171,7 +175,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="40dp"
                         android:layout_gravity="end"
-                        android:layout_marginLeft="20dp">
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="10dp">
 
                         <TextView
                             android:id="@+id/textLong"
@@ -373,7 +378,7 @@
                     <Button
                         android:layout_width="140dp"
                         android:layout_height="55dp"
-
+                        android:onClick="backBtnReport2"
                         android:background="@drawable/btn_back"
                         app:backgroundTint="@null"
                         android:text="Назад"
@@ -385,7 +390,7 @@
                     <Button
                         android:layout_width="140dp"
                         android:layout_height="55dp"
-
+                        android:onClick="nextBtnReport2"
                         android:background="@drawable/background_style_btn"
                         app:backgroundTint="@null"
                         android:text="Далее"
@@ -408,4 +413,4 @@
         </ScrollView>
 
     </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

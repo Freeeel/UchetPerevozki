@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,22 +13,22 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class NewReport1 extends AppCompatActivity {
+public class HistoryReports extends AppCompatActivity {
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_new_report1);
+        setContentView(R.layout.activity_history_reports);
 
+        LinearLayout menuContainer = findViewById(R.id.menuContainer);
 
+        // Создаем и используем MenuHandler
+        MenuHandler menuHandler = new MenuHandler(this);
+        menuHandler.setMenuListeners(menuContainer);
     }
-    public void backBtnReport1(View view){
-        finish();}
 
-    public void nextBtnReport1(View view) {
-        Intent intent = new Intent(this, NewReport2.class);
-        startActivity(intent);
-    }
+
 }

@@ -5,11 +5,12 @@ public class User {
     public String name;
     public String surname;
     public String patronymic;
-    public int roleId;
+    public int role_id;
     public String phone;
-    public String dateBirthday;
-    public String password;
+    public String date_birthday;
     public String login;
-    public String addresResidential;
+    public String password;
+    public String address_residential;
+    public int bank_account_number;
 
 }
