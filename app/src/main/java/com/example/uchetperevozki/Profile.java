@@ -49,7 +49,7 @@ public class Profile extends AppCompatActivity {
         String addressResidential = intent.getStringExtra("user_address_residential");
         String userPassword = intent.getStringExtra("user_password");
         int bankAccountNumber = intent.getIntExtra("user_bank_account_number", -1);
-
+        intent.putExtra("idUser", userId);
         // Отображение данных в активити
         nameText.setText(userName);
         surnameText.setText(userSurname);
@@ -63,9 +63,8 @@ public class Profile extends AppCompatActivity {
         Toast.makeText(Profile.this," "+ dateBirthday ,Toast.LENGTH_SHORT).show();
 
 
+
     }
-
-
 
 
 }

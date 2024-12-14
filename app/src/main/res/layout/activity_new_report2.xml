@@ -120,6 +120,7 @@
                                     >
 
                                     <RadioGroup
+                                        android:id="@+id/radioGroupView"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:orientation="vertical"
@@ -127,7 +128,7 @@
                                         >
 
                                         <RadioButton
-                                            android:id="@+id/radioType1"
+                                            android:id="@+id/radioView1"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:button="@drawable/custom_radio_btn"
@@ -139,7 +140,7 @@
                                             android:paddingStart="6dp"/>
 
                                         <RadioButton
-                                            android:id="@+id/radioType2"
+                                            android:id="@+id/radioView2"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:button="@drawable/custom_radio_btn"
@@ -154,7 +155,7 @@
                                             android:layout_marginBottom="8dp"/>
 
                                         <RadioButton
-                                            android:id="@+id/radioType3"
+                                            android:id="@+id/radioView3"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:button="@drawable/custom_radio_btn"
@@ -203,6 +204,7 @@
                                 >
 
                                 <RadioGroup
+                                    android:id="@+id/radioGroupLong"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical"
@@ -388,9 +390,9 @@
                         />
 
                     <Button
+                        android:id="@+id/btnNextReport2"
                         android:layout_width="140dp"
                         android:layout_height="55dp"
-                        android:onClick="nextBtnReport2"
                         android:background="@drawable/background_style_btn"
                         app:backgroundTint="@null"
                         android:text="Далее"

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Repair"
+    tools:context=".RepairActivity"
     android:background="@color/white">
 
     <RelativeLayout
@@ -282,7 +282,18 @@
                             android:paddingStart="10dp" />
                     </FrameLayout>
                 </RelativeLayout>
+                <Button
+                    android:id="@+id/btnSaveRepair"
+                    android:layout_width="140dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/background_style_btn"
+                    app:backgroundTint="@null"
+                    android:text="Cохранить"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
 
+                    android:layout_marginTop="20dp"
+                    />
             </LinearLayout>
         </ScrollView>
 

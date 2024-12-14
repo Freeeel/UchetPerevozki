@@ -20,21 +20,25 @@ public class MenuHandler {
 
         menuHistory.setOnClickListener(v -> {
             Intent intent = new Intent(context, HistoryReports.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             context.startActivity(intent);
         });
 
         menuReports.setOnClickListener(v -> {
             Intent intent = new Intent(context, NewReport1.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             context.startActivity(intent);
         });
 
         menuRepair.setOnClickListener(v -> {
-            Intent intent = new Intent(context, Repair.class);
+            Intent intent = new Intent(context, RepairActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             context.startActivity(intent);
         });
 
         menuProfile.setOnClickListener(v -> {
             Intent intent = new Intent(context, Profile.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             context.startActivity(intent);
         });
     }

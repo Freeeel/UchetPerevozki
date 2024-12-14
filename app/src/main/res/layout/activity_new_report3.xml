@@ -262,10 +262,12 @@
                             />
 
                         <EditText
+                            android:id="@+id/fillViewWoodFinal"
                             android:layout_width="170dp"
                             android:layout_height="42dp"
                             style="@style/styleFill"
-                            android:layout_below="@+id/textType">
+                            android:layout_below="@+id/textType"
+                            android:paddingStart="10dp">
 
                         </EditText>
                     </RelativeLayout>
@@ -288,12 +290,14 @@
                             android:layout_marginBottom="8dp"
                             />
 
-                        <RelativeLayout
+                        <EditText
+                            android:id="@+id/fillLongWoodFinal"
                             android:layout_width="170dp"
                             android:layout_height="42dp"
                             style="@style/styleFill"
-                            android:layout_below="@+id/textLong">
-                        </RelativeLayout>
+                            android:layout_below="@+id/textLong"
+                            android:paddingStart="10dp">
+                        </EditText>
 
                     </RelativeLayout>
                 </LinearLayout>
@@ -328,7 +332,7 @@
                         android:layout_marginLeft="18dp">
 
                         <EditText
-                            android:id="@+id/fillVolume"
+                            android:id="@+id/fillVolumeWoodFinal"
                             style="@style/styleFill"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -365,8 +369,8 @@
                         android:layout_marginRight="18dp"
                         android:layout_marginLeft="18dp">
 
-                        <Spinner
-                            android:id="@+id/fillAssortment"
+                        <EditText
+                            android:id="@+id/fillAssortmentWoodFinal"
                             style="@style/styleFill"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -403,8 +407,8 @@
                         android:layout_marginRight="18dp"
                         android:layout_marginLeft="18dp">
 
-                        <Spinner
-                            android:id="@+id/fillVarietyWood"
+                        <EditText
+                            android:id="@+id/fillVarietyWoodFinal"
                             style="@style/styleFill"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"

@@ -8,9 +8,6 @@ import retrofit2.http.POST;
 
 public interface IUser {
 
-//    @GET("/user/{login}/{password}")
-//    Call<User>GetUser(@Path("login") String login, @Path("password") String password);
-
     @POST("/login")
     Call<User> loginUser(@Body UserLogin userLogin);
 

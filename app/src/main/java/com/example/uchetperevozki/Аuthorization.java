@@ -43,10 +43,8 @@ public class Аuthorization extends AppCompatActivity {
                     Toast.makeText(Аuthorization.this, "Введите логин и пароль", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
                 // Создание UserLogin
                 UserLogin userLogin = new UserLogin(login, password);
-
                 // Создание RetroFit
                 Retrofit retrofit = RetroFit.getClient();
                 IUser userService = retrofit.create(IUser.class);
@@ -57,13 +55,12 @@ public class Аuthorization extends AppCompatActivity {
                     public void onResponse(Call<User> call, Response<User> response) {
                         if (response.isSuccessful()) {
                             User user = response.body();
-
                             Toast.makeText(Аuthorization.this, "Добро пожаловать: " + user.name, Toast.LENGTH_SHORT).show();
-
-                            //Переход на другую активность
+                            UserSingleton.getInstance().setUser(user);
+                            // Переход на другую активность
                             Intent intent = new Intent(Аuthorization.this, Profile.class);
 
-                            //Передача данных
+                            // Передача данных
                             intent.putExtra("user_id", user.id);
                             intent.putExtra("user_name", user.name);
                             intent.putExtra("user_surname", user.surname);
@@ -74,10 +71,7 @@ public class Аuthorization extends AppCompatActivity {
                             intent.putExtra("user_bank_account_number", user.bank_account_number);
                             intent.putExtra("user_date_birthday", user.date_birthday);
 
-
-
                             startActivity(intent);
-                            finish();
                         } else {
                             Toast.makeText(Аuthorization.this, "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
                             Log.e("Authorization", "Invalid credentials response: " + response.code() + ", message: " + response.message());
@@ -94,9 +88,3 @@ public class Аuthorization extends AppCompatActivity {
         });
     }
 }
-
-//    public void main(View view){
-//        Intent intent = new Intent(this, HistoryReports.class);
-//        startActivity(intent);}
-
-
