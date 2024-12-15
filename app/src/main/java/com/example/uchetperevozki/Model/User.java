@@ -1,5 +1,7 @@
 package com.example.uchetperevozki.Model;
 
+import java.util.Date;
+
 public class User {
     public int id;
     public String name;

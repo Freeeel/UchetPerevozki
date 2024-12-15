@@ -115,7 +115,10 @@
                             style="@style/styleFill"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:paddingStart="10dp" />
+                            android:paddingStart="10dp"
+                            android:focusable="false"
+                            android:clickable="false"
+                            />
                     </FrameLayout>
                 </RelativeLayout>
 
@@ -156,6 +159,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:paddingStart="10dp"
+                            android:focusable="false"
+                            android:clickable="false"
                             />
                     </FrameLayout>
                 </RelativeLayout>
@@ -195,7 +200,9 @@
                             style="@style/styleFill"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:paddingStart="10dp" />
+                            android:paddingStart="10dp"
+                            android:focusable="false"
+                            android:clickable="false"/>
                     </FrameLayout>
                 </RelativeLayout>
 
@@ -234,6 +241,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:paddingStart="10dp"
+                            android:focusable="false"
+                            android:clickable="false"
                             />
                     </FrameLayout>
                 </RelativeLayout>
@@ -267,7 +276,9 @@
                             android:layout_height="42dp"
                             style="@style/styleFill"
                             android:layout_below="@+id/textType"
-                            android:paddingStart="10dp">
+                            android:paddingStart="10dp"
+                            android:focusable="false"
+                            android:clickable="false">
 
                         </EditText>
                     </RelativeLayout>
@@ -296,7 +307,9 @@
                             android:layout_height="42dp"
                             style="@style/styleFill"
                             android:layout_below="@+id/textLong"
-                            android:paddingStart="10dp">
+                            android:paddingStart="10dp"
+                            android:focusable="false"
+                            android:clickable="false">
                         </EditText>
 
                     </RelativeLayout>
@@ -336,7 +349,9 @@
                             style="@style/styleFill"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:paddingStart="10dp" />
+                            android:paddingStart="10dp"
+                            android:focusable="false"
+                            android:clickable="false"/>
                     </FrameLayout>
                 </RelativeLayout>
 
@@ -374,7 +389,9 @@
                             style="@style/styleFill"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:paddingStart="10dp" />
+                            android:paddingStart="10dp"
+                            android:focusable="false"
+                            android:clickable="false"/>
                     </FrameLayout>
                 </RelativeLayout>
 
@@ -412,7 +429,9 @@
                             style="@style/styleFill"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:paddingStart="10dp" />
+                            android:paddingStart="10dp"
+                            android:focusable="false"
+                            android:clickable="false"/>
                     </FrameLayout>
                 </RelativeLayout>
 

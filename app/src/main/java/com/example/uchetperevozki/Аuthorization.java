@@ -16,6 +16,11 @@ import com.example.uchetperevozki.Model.User;
 import com.example.uchetperevozki.ModelRequest.UserLogin;
 import com.example.uchetperevozki.RetrofitModels.RetroFit;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Date;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -57,6 +62,8 @@ public class Аuthorization extends AppCompatActivity {
                             User user = response.body();
                             Toast.makeText(Аuthorization.this, "Добро пожаловать: " + user.name, Toast.LENGTH_SHORT).show();
                             UserSingleton.getInstance().setUser(user);
+
+
                             // Переход на другую активность
                             Intent intent = new Intent(Аuthorization.this, Profile.class);
 

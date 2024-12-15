@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UchetPerevozki"
         tools:targetApi="31">
+        <meta-data
+            android:name="android.support.multidex.MANIFEST_PLACEHOLDER"
+            android:value="ru" />
         <activity
             android:name=".HistoryReports"
             android:exported="false" />

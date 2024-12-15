@@ -2,8 +2,7 @@ package com.example.uchetperevozki;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
+
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -11,6 +10,15 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.uchetperevozki.Interface.IUser;
+import com.example.uchetperevozki.Model.User;
+import com.example.uchetperevozki.RetrofitModels.RetroFit;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class Profile extends AppCompatActivity {
 
@@ -49,6 +57,7 @@ public class Profile extends AppCompatActivity {
         String addressResidential = intent.getStringExtra("user_address_residential");
         String userPassword = intent.getStringExtra("user_password");
         int bankAccountNumber = intent.getIntExtra("user_bank_account_number", -1);
+
         intent.putExtra("idUser", userId);
         // Отображение данных в активити
         nameText.setText(userName);
@@ -64,7 +73,6 @@ public class Profile extends AppCompatActivity {
 
 
 
+
     }
-
-
 }

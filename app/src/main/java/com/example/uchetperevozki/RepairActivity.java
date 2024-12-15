@@ -29,6 +29,7 @@ public class RepairActivity extends AppCompatActivity {
     private EditText editTextDescription;
     private EditText editTextAddress;
     private EditText editTextDate;
+    private int userId;
     private Button buttonSubmit;
 
     private static final String TAG = "RepairsActivity";
@@ -48,7 +49,11 @@ public class RepairActivity extends AppCompatActivity {
         MenuHandler menuHandler = new MenuHandler(this);
         menuHandler.setMenuListeners(menuContainer);
 
-
+        User user = UserSingleton.getInstance().getUser();
+        if (user != null) {
+            userId = user.id;
+            Log.d("IdUser", "Выбранный вид: " + userId);
+        }
 
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +68,7 @@ public class RepairActivity extends AppCompatActivity {
         String address = editTextAddress.getText().toString();
         String date = editTextDate.getText().toString();
 
-        int userId = 1;
+
 
         Log.d("SendRepairData", "Описание: " + description);
         Log.d("SendRepairData", "Адрес: " + address);

@@ -98,52 +98,6 @@ public class NewReport2 extends AppCompatActivity {
         });
     }
 
-    private void nextActivityReport2() {
-        // Получение данных с предыдущего экрана
-        Intent previousIntent = getIntent();
-        String departurePoint = previousIntent.getStringExtra("departure_point");
-        String typeDeparturePoint = previousIntent.getStringExtra("type_departure_point");
-        String sender = previousIntent.getStringExtra("sender");
-        String targetPoint = previousIntent.getStringExtra("target_point");
-        String typeTargetPoint = previousIntent.getStringExtra("type_target_point");
-        String recipient = previousIntent.getStringExtra("recipient");
-
-        // Проверка на null
-        if (isAnyStringNull(departurePoint, typeDeparturePoint, sender, targetPoint, typeTargetPoint, recipient)) {
-            Toast.makeText(this, "Не все данные заполнены!", Toast.LENGTH_SHORT).show();
-            Log.e(TAG, "Не все данные заполнены!");
-            return;
-        }
-
-        String viewWood = getViewWood();
-        int longWood = getLongWood();
-        String varietyWood = (String) spinnerVariety.getSelectedItem();
-        String assortmentWood = (String) spinnerAssortment.getSelectedItem();
-        Float volumeWood = getVolumeWood();
-
-        // Проверка на заполненные поля
-        if (viewWood == null || longWood <= 0 || volumeWood <= 0) {
-            Toast.makeText(this, "Пожалуйста, заполните все необходимые поля!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        // Создание Intent для следующей активности
-        Intent intent = new Intent(this, NewReport3.class);
-        intent.putExtra("departure_point", departurePoint);
-        intent.putExtra("view_wood", viewWood);
-        intent.putExtra("long_wood", longWood);
-        intent.putExtra("variety_wood", varietyWood);
-        intent.putExtra("assortment_wood", assortmentWood);
-        intent.putExtra("volume_wood", volumeWood);
-        intent.putExtra("type_departure_point", typeDeparturePoint);
-        intent.putExtra("sender", sender);
-        intent.putExtra("target_point", targetPoint);
-        intent.putExtra("type_target_point", typeTargetPoint);
-        intent.putExtra("recipient", recipient);
-
-        startActivity(intent);
-    }
-
     private boolean isAnyStringNull(String... strings) {
         for (String str : strings) {
             if (str == null) {
@@ -201,6 +155,54 @@ public class NewReport2 extends AppCompatActivity {
             }
         }
     }
+
+    private void nextActivityReport2() {
+        // Получение данных с предыдущего экрана
+        Intent previousIntent = getIntent();
+        String departurePoint = previousIntent.getStringExtra("departure_point");
+        String typeDeparturePoint = previousIntent.getStringExtra("type_departure_point");
+        String sender = previousIntent.getStringExtra("sender");
+        String targetPoint = previousIntent.getStringExtra("target_point");
+        String typeTargetPoint = previousIntent.getStringExtra("type_target_point");
+        String recipient = previousIntent.getStringExtra("recipient");
+
+        // Проверка на null
+        if (isAnyStringNull(departurePoint, typeDeparturePoint, sender, targetPoint, typeTargetPoint, recipient)) {
+            Toast.makeText(this, "Не все данные заполнены!", Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "Не все данные заполнены!");
+            return;
+        }
+
+        String viewWood = getViewWood();
+        int longWood = getLongWood();
+        String varietyWood = (String) spinnerVariety.getSelectedItem();
+        String assortmentWood = (String) spinnerAssortment.getSelectedItem();
+        Float volumeWood = getVolumeWood();
+
+        // Проверка на заполненные поля
+        if (viewWood == null || longWood <= 0 || volumeWood <= 0) {
+            Toast.makeText(this, "Пожалуйста, заполните все необходимые поля!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Создание Intent для следующей активности
+        Intent intent = new Intent(this, NewReport3.class);
+        intent.putExtra("departure_point", departurePoint);
+        intent.putExtra("view_wood", viewWood);
+        intent.putExtra("long_wood", longWood);
+        intent.putExtra("variety_wood", varietyWood);
+        intent.putExtra("assortment_wood", assortmentWood);
+        intent.putExtra("volume_wood", volumeWood);
+        intent.putExtra("type_departure_point", typeDeparturePoint);
+        intent.putExtra("sender", sender);
+        intent.putExtra("target_point", targetPoint);
+        intent.putExtra("type_target_point", typeTargetPoint);
+        intent.putExtra("recipient", recipient);
+
+        startActivity(intent);
+    }
+
+
 
     public void backBtnReport2(View view) {
         finish();

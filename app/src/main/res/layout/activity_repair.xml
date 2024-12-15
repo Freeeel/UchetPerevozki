@@ -87,7 +87,8 @@
                             style="@style/styleFill"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:paddingStart="10dp" />
+                            android:paddingStart="10dp"
+                            android:inputType="text"/>
                     </FrameLayout>
                 </RelativeLayout>
 
@@ -125,7 +126,8 @@
                             style="@style/styleFill"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:paddingStart="10dp" />
+                            android:paddingStart="10dp"
+                            android:inputType="text"/>
                     </FrameLayout>
                 </RelativeLayout>
 
@@ -202,7 +204,8 @@
                             style="@style/styleFill"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:paddingStart="10dp" />
+                            android:paddingStart="10dp"
+                            android:inputType="textMultiLine"/>
                     </FrameLayout>
                 </RelativeLayout>
 
@@ -240,7 +243,8 @@
                             style="@style/styleFill"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:paddingStart="10dp" />
+                            android:paddingStart="10dp"
+                            android:inputType="date"/>
                     </FrameLayout>
                 </RelativeLayout>
 
@@ -279,7 +283,8 @@
                             style="@style/styleFill"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:paddingStart="10dp" />
+                            android:paddingStart="10dp"
+                            android:inputType="text"/>
                     </FrameLayout>
                 </RelativeLayout>
                 <Button

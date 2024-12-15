@@ -9,16 +9,13 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.uchetperevozki.Interface.IRepair;
+
 import com.example.uchetperevozki.Interface.IReport;
-import com.example.uchetperevozki.Model.Repair;
+
 import com.example.uchetperevozki.Model.Report;
 import com.example.uchetperevozki.Model.User;
-import com.example.uchetperevozki.ModelRequest.RepairCreate;
+
 import com.example.uchetperevozki.ModelRequest.ReportCreate;
 import com.example.uchetperevozki.RetrofitModels.RetroFit;
 
@@ -111,10 +108,11 @@ public class NewReport3 extends AppCompatActivity {
         editTextTargetPoint.setText(targetPoint);
         editTextRecipient.setText(recipient);
         editTextViewWood.setText(viewWood);
-        editTextLongWood.setText(String.valueOf(longWood));
+
         editTextVarietyWood.setText(varietyWood);
         editTextAssortmentWood.setText(assortmentWood);
         editTextVolumeWood.setText(String.valueOf(volumeWood));
+        editTextLongWood.setText(String.valueOf(longWood));
     }
 
     public void SendReportData(){
@@ -124,7 +122,7 @@ public class NewReport3 extends AppCompatActivity {
         String reportDate = currentDate.format(formatter);
 
         ReportCreate report = new ReportCreate(departurePoint, typeDeparturePoint, sender, targetPoint,
-             typeDeparturePoint, recipient, viewWood, longWood, volumeWood, reportDate, assortmentWood, varietyWood, userId);
+             typeTargetPoint, recipient, viewWood, longWood, volumeWood, reportDate, assortmentWood, varietyWood, userId);
 
         Log.d("ReportCreate", "Departure Point: " + departurePoint);
         Log.d("ReportCreate", "Type Departure Point: " + typeDeparturePoint);
