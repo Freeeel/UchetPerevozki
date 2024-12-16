@@ -173,49 +173,49 @@
                 android:orientation="vertical"
                 android:gravity="center">
 
-                <!--fillDate-->
-                <RelativeLayout
-                    android:id="@+id/fillDateContainer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-                    <TextView
-                        android:id="@+id/textDate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignStart="@id/frameDate"
-                        android:layout_marginStart="3dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Дата рождения"
-                        android:textColor="@color/black"
-                        android:textSize="22sp" />
+<!--                &lt;!&ndash;fillDate&ndash;&gt;-->
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/fillDateContainer"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    >-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/textDate"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignStart="@id/frameDate"-->
+<!--                        android:layout_marginStart="3dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:text="Дата рождения"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="22sp" />-->
 
-                    <FrameLayout
-                        android:id="@+id/frameDate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="42dp"
-                        android:layout_below="@id/textDate"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginLeft="18dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="18dp">
+<!--                    <FrameLayout-->
+<!--                        android:id="@+id/frameDate"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="42dp"-->
+<!--                        android:layout_below="@id/textDate"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_marginLeft="18dp"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_marginRight="18dp">-->
 
-                        <View
-                            android:id="@+id/fillDate"
-                            style="@style/styleFill"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+<!--                        <View-->
+<!--                            android:id="@+id/fillDate"-->
+<!--                            style="@style/styleFill"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent" />-->
 
-                        <TextView
-                            android:id="@+id/dateBirthdayText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="11dp"
+<!--                        <TextView-->
+<!--                            android:id="@+id/dateBirthdayText"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center_vertical"-->
+<!--                            android:layout_marginStart="11dp"-->
 
-                            android:textSize="14sp" />
-                    </FrameLayout>
-                </RelativeLayout>
+<!--                            android:textSize="14sp" />-->
+<!--                    </FrameLayout>-->
+<!--                </RelativeLayout>-->
 
                 <!--textRefactor-->
                 <TextView
@@ -303,7 +303,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:paddingStart="10dp"
-                            android:inputType="textVisiblePassword"/>
+                            android:inputType="textPassword"/>
                     </FrameLayout>
                 </RelativeLayout>
 
@@ -384,7 +384,17 @@
                             android:inputType="number"/>
                     </FrameLayout>
                 </RelativeLayout>
-
+                <Button
+                    android:id="@+id/btnUpdateProfile"
+                    android:layout_width="140dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/background_style_btn"
+                    app:backgroundTint="@null"
+                    android:text="Cохранить"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginTop="30dp"
+                    />
             </LinearLayout>
         </ScrollView>
 
