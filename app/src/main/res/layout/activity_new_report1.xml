@@ -70,15 +70,11 @@
                     android:id="@+id/textInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:layout_below="@id/fillNumeration"
                     android:layout_centerHorizontal="true"
-
-
                     android:text="Сведения о транспортировке"
                     android:textSize="24sp"
                     android:textColor="@color/black"
-
                     />
 
                 <!--DeparturePoint-->
@@ -91,13 +87,10 @@
                         android:id="@+id/textDeparturePoint"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
                         android:layout_alignStart="@id/frameDeparturePoint"
                         android:layout_marginStart="3dp"
                         android:layout_marginTop="43dp"
-
                         android:text="Пункт отправления"
-
                         android:textColor="@color/black"
                         android:textSize="22sp" />
 
@@ -131,11 +124,9 @@
                         android:id="@+id/textTypeDeparturePoint"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
                         android:layout_alignStart="@id/frameTypeDeparturePoint"
                         android:layout_marginStart="3dp"
                         android:layout_marginTop="15dp"
-
                         android:text="Тип пункта отправления"
                         android:textColor="@color/black"
                         android:textSize="22sp" />

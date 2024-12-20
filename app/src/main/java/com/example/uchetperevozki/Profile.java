@@ -85,10 +85,9 @@ public class Profile extends AppCompatActivity {
                     newBankAccountNumber = null;
                 }
 
-                // Создаем экземпляр UserUpdate
                 UserUpdate userUpdate = new UserUpdate();
 
-                // Проверяем и устанавливаем значения только для тех полей, которые были изменены
+                // Установка значений только для тех полей, которые были изменены
                 if ( !newPassword.equals(userPassword)) {
                     userUpdate.setPassword(newPassword);
                 }
@@ -121,7 +120,6 @@ public class Profile extends AppCompatActivity {
                     userUpdate.setBank_account_number(bankAccountNumber);
                 }
 
-
                 Retrofit retrofit = RetroFit.getClient();
                 IUser userService = retrofit.create(IUser.class);
                 Call<User> call = userService.updateUser(user.id, userUpdate);
@@ -131,7 +129,6 @@ public class Profile extends AppCompatActivity {
                         if (response.isSuccessful()) {
                             User updatedUser = response.body();
                             Toast.makeText(Profile.this, "Данные успешно обновлены!", Toast.LENGTH_SHORT).show();
-                            // Обновите данные в вашем UserSingleton, если это необходимо
                             UserSingleton.getInstance().setUser(updatedUser);
                         } else {
                             Toast.makeText(Profile.this, "Ошибка обновления данных: " + response.code(), Toast.LENGTH_SHORT).show();

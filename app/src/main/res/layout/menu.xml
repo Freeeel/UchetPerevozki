@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:text="Все отчёты"
                 android:textColor="@color/black"
-                android:layout_gravity="center"/> <!-- Это обеспечит центрирование текста -->
+                android:layout_gravity="center"/>
     </LinearLayout>
 
         <LinearLayout

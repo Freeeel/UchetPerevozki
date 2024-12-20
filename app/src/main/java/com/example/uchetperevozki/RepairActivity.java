@@ -14,8 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.uchetperevozki.Interface.IRepair;
 import com.example.uchetperevozki.Interface.IUser;
+import com.example.uchetperevozki.Interface.IUserCar;
 import com.example.uchetperevozki.Model.Repair;
 import com.example.uchetperevozki.Model.User;
+import com.example.uchetperevozki.Model.UserCar;
 import com.example.uchetperevozki.ModelRequest.RepairCreate;
 import com.example.uchetperevozki.RetrofitModels.RetroFit;
 
@@ -26,11 +28,14 @@ import retrofit2.Retrofit;
 
 public class RepairActivity extends AppCompatActivity {
 
+    private EditText editTextStamp;
+    private EditText editTextModel;
+    private EditText editTextNumberState;
+
     private EditText editTextDescription;
     private EditText editTextAddress;
     private EditText editTextDate;
     private int userId;
-    private Button buttonSubmit;
 
     private static final String TAG = "RepairsActivity";
     @Override
@@ -40,10 +45,13 @@ public class RepairActivity extends AppCompatActivity {
         setContentView(R.layout.activity_repair);
 
         LinearLayout menuContainer = findViewById(R.id.menuContainer);
+        editTextStamp = findViewById(R.id.fillBrand);
+        editTextModel = findViewById(R.id.fillModel);
+        editTextNumberState = findViewById(R.id.fillNumber);
         editTextDescription = findViewById(R.id.fillDescription);
         editTextAddress = findViewById(R.id.fillAddress);
         editTextDate = findViewById(R.id.fillDateTime);
-        buttonSubmit = findViewById(R.id.btnSaveRepair);
+        Button buttonSubmit = findViewById(R.id.btnSaveRepair);
 
         // Создаем и используем MenuHandler
         MenuHandler menuHandler = new MenuHandler(this);
@@ -55,25 +63,20 @@ public class RepairActivity extends AppCompatActivity {
             Log.d("IdUser", "Выбранный вид: " + userId);
         }
 
+        GetCar(userId);
+
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendRepairData();
-
+                SendRepairData();
             }
         });
+
     }
-    private void sendRepairData() {
+    private void SendRepairData() {
         String description = editTextDescription.getText().toString();
         String address = editTextAddress.getText().toString();
         String date = editTextDate.getText().toString();
-
-
-
-        Log.d("SendRepairData", "Описание: " + description);
-        Log.d("SendRepairData", "Адрес: " + address);
-        Log.d("SendRepairData", "Дата: " + date);
-        Log.d("SendRepairData", "ID пользователя: " + userId);
 
         RepairCreate repair = new RepairCreate(description, date, address, userId);
 
@@ -86,7 +89,7 @@ public class RepairActivity extends AppCompatActivity {
             public void onResponse(Call<Repair> call, Response<Repair> response) {
                 if (response.isSuccessful()) {
                     Repair createdRepair = response.body();
-                    Toast.makeText(RepairActivity.this, "Ремонт создан: ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RepairActivity.this, "Ремонт создан ", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(RepairActivity.this, "Ошибка: " + response.message(), Toast.LENGTH_SHORT).show();
                 }
@@ -98,5 +101,31 @@ public class RepairActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void GetCar(int userId){
+        Retrofit retrofit = RetroFit.getClient();
+        IUserCar userCarService = retrofit.create(IUserCar.class);
+        Call<UserCar> call = userCarService.getUserCar(userId);
+
+        call.enqueue(new Callback<UserCar>() {
+            @Override
+            public void onResponse(Call<UserCar> call, Response<UserCar> response) {
+                if (response.isSuccessful()) {
+                    UserCar userCar = response.body();
+                    editTextStamp.setText(userCar.getStamp());
+                    editTextModel.setText(userCar.getModel());
+                    editTextNumberState.setText(userCar.getStateNumber());
+                }
+                else {
+                    Log.e("UserCar", "Запрос не удался или вернул null.");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserCar> call, Throwable t) {
+                Log.e("UserCar", "Ошибка: " + t.getMessage());
+            }
+        });
     }
 }

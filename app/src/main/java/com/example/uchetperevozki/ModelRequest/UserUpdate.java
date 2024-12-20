@@ -16,32 +16,16 @@ public class UserUpdate {
         this.bank_account_number = bank_account_number;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getPhone() {
-        return phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public String getAddress_residential() {
-        return address_residential;
-    }
-
     public void setAddress_residential(String address_residential) {
         this.address_residential = address_residential;
-    }
-
-    public int getBank_account_number() {
-        return bank_account_number;
     }
 
     public void setBank_account_number(int bank_account_number) {

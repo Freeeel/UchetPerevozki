@@ -94,7 +94,6 @@
                         android:layout_marginTop="40dp"
                         android:layout_gravity="start"
                         android:layout_marginLeft="10dp">
-
                             <TextView
                                 android:id="@+id/textType"
                                 android:layout_width="wrap_content"
@@ -103,22 +102,17 @@
                                 android:textSize="22sp"
                                 android:textColor="@color/black"
                                 android:layout_centerHorizontal="true"
-                                android:layout_marginBottom="8dp"
-                                />
-
+                                android:layout_marginBottom="8dp" />
                             <RelativeLayout
                                 android:layout_width="170dp"
                                 android:layout_height="130dp"
                                 style="@style/styleFill"
                                 android:layout_below="@+id/textType">
-
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical"
-                                    android:layout_centerVertical="true"
-                                    >
-
+                                    android:layout_centerVertical="true">
                                     <RadioGroup
                                         android:id="@+id/radioGroupView"
                                         android:layout_width="wrap_content"
@@ -132,11 +126,9 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:button="@drawable/custom_radio_btn"
-
                                             android:text="Баланс"
                                             android:textColor="@android:color/black"
                                             android:textSize="20sp"
-
                                             android:paddingStart="6dp"/>
 
                                         <RadioButton
@@ -144,13 +136,10 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:button="@drawable/custom_radio_btn"
-
                                             android:text="Пиловочник"
                                             android:textColor="@android:color/black"
                                             android:textSize="20sp"
-
                                             android:paddingStart="6dp"
-
                                             android:layout_marginTop="8dp"
                                             android:layout_marginBottom="8dp"/>
 
@@ -159,13 +148,10 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:button="@drawable/custom_radio_btn"
-
                                             android:text="Фанкряж"
                                             android:textColor="@android:color/black"
                                             android:textSize="20sp"
-
                                             android:paddingStart="6dp"/>
-
                                     </RadioGroup>
                                 </LinearLayout>
                             </RelativeLayout>
