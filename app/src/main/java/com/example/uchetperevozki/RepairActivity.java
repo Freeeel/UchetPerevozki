@@ -1,7 +1,9 @@
 package com.example.uchetperevozki;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +22,9 @@ import com.example.uchetperevozki.Model.User;
 import com.example.uchetperevozki.Model.UserCar;
 import com.example.uchetperevozki.ModelRequest.RepairCreate;
 import com.example.uchetperevozki.RetrofitModels.RetroFit;
+
+import java.util.Calendar;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -63,7 +68,17 @@ public class RepairActivity extends AppCompatActivity {
             Log.d("IdUser", "Выбранный вид: " + userId);
         }
 
+        setupEditTextWithLimit(R.id.fillDescription, 100);
+        setupEditTextWithLimit(R.id.fillAddress,50);
+
         GetCar(userId);
+
+        editTextDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog();
+            }
+        });
 
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,5 +142,28 @@ public class RepairActivity extends AppCompatActivity {
                 Log.e("UserCar", "Ошибка: " + t.getMessage());
             }
         });
+    }
+
+    private void showDatePickerDialog() {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                this,
+                (view, selectedYear, selectedMonth, selectedDay) -> {
+                    // Отобразите дату в формате дд/мм/гггг
+                    String selectedDate = String.format(Locale.getDefault(), "%04d-%02d-%02d", selectedYear, selectedMonth + 1, selectedDay);
+                    editTextDate.setText(selectedDate);
+                },
+                year, month, day);
+
+        datePickerDialog.show();
+    }
+
+    private void setupEditTextWithLimit(int editTextId, int maxLength) {
+        EditText editText = findViewById(editTextId);
+        editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
     }
 }

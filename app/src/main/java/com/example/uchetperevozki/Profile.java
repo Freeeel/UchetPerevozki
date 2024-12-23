@@ -3,6 +3,9 @@ package com.example.uchetperevozki;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,6 +47,12 @@ public class Profile extends AppCompatActivity {
         EditText passwordText = findViewById(R.id.fillPassword);
         Button buttonUpdateData = findViewById(R.id.btnUpdateProfile);
 
+        //Валидация
+        setupPhoneNumberMask(R.id.fillPhone);
+        setupEditTextWithLimit(R.id.fillPassword, 18);
+        setupEditTextWithLimit(R.id.fillAddress,50);
+        setupEditTextWithLimit(R.id.fillBankNumber,20);
+
         // Создаем и используем MenuHandler
         MenuHandler menuHandler = new MenuHandler(this);
         menuHandler.setMenuListeners(menuContainer);
@@ -70,10 +79,11 @@ public class Profile extends AppCompatActivity {
         passwordText.setText(userPassword);
         bankAccountNumberText.setText(String.valueOf(bankAccountNumber));
 
+
         buttonUpdateData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String newPhone = phoneText.getText().toString();
+                String newPhone = phoneText.getText().toString().replaceAll("[^\\d]", "");
                 String newAddress = addressResidentialText.getText().toString();
                 String newPassword = passwordText.getText().toString();
                 Integer newBankAccountNumber;
@@ -140,6 +150,51 @@ public class Profile extends AppCompatActivity {
                         Toast.makeText(Profile.this, "Ошибка сети: " + t.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+            }
+        });
+
+    }
+
+    private void setupEditTextWithLimit(int editTextId, int maxLength) {
+        EditText editText = findViewById(editTextId);
+        editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
+    }
+
+    private void setupPhoneNumberMask(int editTextId) {
+        EditText phoneNumberEditText = findViewById(editTextId);
+        phoneNumberEditText.addTextChangedListener(new TextWatcher() {
+            private boolean isUpdating = false;
+            private final String defaultPrefix = "+7 ";
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (isUpdating) return;
+                isUpdating = true;
+
+                String phone = s.toString().replaceAll("[^\\d]", "");
+                StringBuilder formatted = new StringBuilder();
+
+                if (phone.length() >= 1) formatted.append("+7 ");
+                if (phone.length() > 1)
+                    formatted.append("(").append(phone.substring(1, Math.min(phone.length(), 4)));
+                if (phone.length() >= 4)
+                    formatted.append(") ").append(phone.substring(4, Math.min(phone.length(), 7)));
+                if (phone.length() >= 7)
+                    formatted.append("-").append(phone.substring(7, Math.min(phone.length(), 9)));
+                if (phone.length() >= 9)
+                    formatted.append("-").append(phone.substring(9, Math.min(phone.length(), 11)));
+
+                phoneNumberEditText.setText(formatted.toString());
+                phoneNumberEditText.setSelection(phoneNumberEditText.getText().length());
+                isUpdating = false;
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
             }
         });
     }

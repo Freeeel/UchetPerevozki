@@ -112,7 +112,14 @@ public class NewReport3 extends AppCompatActivity {
         editTextVarietyWood.setText(varietyWood);
         editTextAssortmentWood.setText(assortmentWood);
         editTextVolumeWood.setText(String.valueOf(volumeWood));
-        editTextLongWood.setText(String.valueOf(longWood));
+
+        String lengthUnit;
+        if (longWood >= 2 && longWood <= 4) {
+            lengthUnit = "метра";
+        } else {
+            lengthUnit = "метров";
+        }
+        editTextLongWood.setText(String.valueOf(longWood + " " + lengthUnit));
     }
 
     public void SendReportData(){

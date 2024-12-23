@@ -88,7 +88,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:paddingStart="10dp"
-                            android:inputType="text"/>
+                            android:inputType="text"
+                            android:focusable="false"
+                            android:clickable="false"/>
                     </FrameLayout>
                 </RelativeLayout>
 
@@ -127,7 +129,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:paddingStart="10dp"
-                            android:inputType="text"/>
+                            android:inputType="text"
+                            android:focusable="false"
+                            android:clickable="false"/>
                     </FrameLayout>
                 </RelativeLayout>
 
@@ -165,7 +169,9 @@
                             style="@style/styleFill"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:paddingStart="10dp" />
+                            android:paddingStart="10dp"
+                            android:focusable="false"
+                            android:clickable="false"/>
                     </FrameLayout>
                 </RelativeLayout>
 
@@ -224,7 +230,7 @@
                         android:layout_marginStart="3dp"
                         android:layout_marginTop="15dp"
 
-                        android:text="Время и дата ремонта"
+                        android:text="Дата ремонта"
                         android:textColor="@color/black"
                         android:textSize="22sp" />
 
@@ -244,7 +250,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:paddingStart="10dp"
-                            android:inputType="date"/>
+                            android:inputType="date"
+                            android:focusable="false"
+                            android:clickable="true" />
                     </FrameLayout>
                 </RelativeLayout>
 

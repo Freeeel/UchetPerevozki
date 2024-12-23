@@ -2,6 +2,7 @@ package com.example.uchetperevozki;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -42,6 +43,8 @@ public class NewReport2 extends AppCompatActivity {
         spinnerAssortment = findViewById(R.id.fillAssortment);
         spinnerVariety = findViewById(R.id.fillVarietyWood);
         editTextVolumeWood = findViewById(R.id.fillVolume);
+
+        setupEditTextWithLimit(R.id.fillVolume,10);
     }
 
     private void setupSpinners() {
@@ -65,7 +68,6 @@ public class NewReport2 extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String varietyWood = (String) adapterView.getItemAtPosition(i);
-                Toast.makeText(NewReport2.this, "Выбрано: " + varietyWood, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -78,7 +80,6 @@ public class NewReport2 extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String assortmentWood = (String) adapterView.getItemAtPosition(i);
-                Toast.makeText(NewReport2.this, "Выбрано: " + assortmentWood, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -98,14 +99,7 @@ public class NewReport2 extends AppCompatActivity {
         });
     }
 
-    private boolean isAnyStringNull(String... strings) {
-        for (String str : strings) {
-            if (str == null) {
-                return true;
-            }
-        }
-        return false;
-    }
+
 
     private String getViewWood() {
         int selectedIdView = radioGroupView.getCheckedRadioButtonId();
@@ -166,12 +160,6 @@ public class NewReport2 extends AppCompatActivity {
         String typeTargetPoint = previousIntent.getStringExtra("type_target_point");
         String recipient = previousIntent.getStringExtra("recipient");
 
-        // Проверка на null
-        if (isAnyStringNull(departurePoint, typeDeparturePoint, sender, targetPoint, typeTargetPoint, recipient)) {
-            Toast.makeText(this, "Не все данные заполнены!", Toast.LENGTH_SHORT).show();
-            Log.e(TAG, "Не все данные заполнены!");
-            return;
-        }
 
         String viewWood = getViewWood();
         int longWood = getLongWood();
@@ -202,12 +190,12 @@ public class NewReport2 extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-
     public void backBtnReport2(View view) {
         finish();
     }
 
-
-
+    private void setupEditTextWithLimit(int editTextId, int maxLength) {
+        EditText editText = findViewById(editTextId);
+        editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
+    }
 }

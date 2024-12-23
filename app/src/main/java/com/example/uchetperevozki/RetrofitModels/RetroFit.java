@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import okhttp3.OkHttpClient;
 
 public class RetroFit {
-    private static final String BASE_URL = "http://10.0.2.2:8000";
+    private static final String BASE_URL = "https://api-1-vcqd.onrender.com";
     private static Retrofit retrofit = null;
 
 
